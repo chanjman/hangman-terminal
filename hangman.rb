@@ -12,7 +12,7 @@ class Hangman
   def play
     system 'clear'
     puts '*******************************************************'
-    puts '**   Welcome to Hangman! Don\'t let the hang you!    **'
+    puts '**   Welcome to Hangman! Don\'t let them hang you!   **'
     puts '*******************************************************'
     puts ''
     puts 'What do you want?'
