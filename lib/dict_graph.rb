@@ -29,32 +29,3 @@ class DictionaryGraph
     letters.sort_by { |_key, value| value }.reverse.to_h.keys
   end
 end
-
-dict = DictionaryGraph.new
-
-=begin
-# sorts the letter frequency by size
-def letter_frequency(word_size)
-  words = letter_frequency_unsorted(words_by_size(word_size))
-  words.each do |size_key, size_value|
-    words[size_key] = size_value.sort_by { |_key, value| value }.reverse.to_h
-  end
-       .to_h
-end
-
-# converts words to characters for easier counting
-def words_to_characters(words)
-  words.each { |key, value| words[key] = value.join.chars }
-end
-
-# finds the letter count and makes a hash - letter => count
-def letter_frequency_unsorted(to_freq)
-  words = words_to_characters(to_freq)
-  words.each do |key, value|
-    words[key] = value.each_with_object(Hash.new(0)) do |chr, hash|
-      hash[chr] += 1
-      hash
-    end
-  end
-end
-=end
