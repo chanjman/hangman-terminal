@@ -66,16 +66,17 @@ class BigBrother
     puts 'Do you want to play again? (1) YES, (2) NO'
     choice = gets.chomp
     exit if choice == '2'
-    Game.new({ player: player }).play if choice == '1' && player.class == Player
-    Game.new({player: AI.new(secret_word.size)}).play if choice == '1' && player.class == AI
+    Game.new(player: player).play if choice == '1' && player.class == Player
+    Game.new(player: AI.new(secret_word.size)).play if choice == '1' && player.class == AI
   end
 
   def random_id
-    (rand(26)+97).chr + (rand(899)+100).to_s + (rand(26)+65).chr
+    (rand(26) + 97).chr + (rand(899) + 100).to_s + (rand(26) + 65).chr
   end
 
   def to_save
-    { id: id,
+    {
+      id: id,
       player: player,
       secret_word: secret_word,
       guessed_letters: guessed_letters,

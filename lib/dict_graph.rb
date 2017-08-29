@@ -24,7 +24,7 @@ class DictionaryGraph
     words = find_words_by_size(word_size)
     letters = ('a'..'z').each_with_object({}) { |letter, hash| hash[letter] = 0 }
     words.each do |word|
-      letters.each { |letter, freq| letters[letter] += 1 if word.include? letter }
+      letters.each { |letter, _freq| letters[letter] += 1 if word.include? letter }
     end
     letters.sort_by { |_key, value| value }.reverse.to_h.keys
   end
